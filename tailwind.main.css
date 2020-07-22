@@ -1,0 +1,13 @@
+/*! purgecss start ignore */
+@import "tailwindcss/base";
+@import "./tailwind.base.css";
+
+@import "tailwindcss/components";
+@import "./tailwind.components.css";
+/*! purgecss end ignore */
+
+/*
+Tailwindcss/utilities comprises more than 99% of Tailwind's raw output.
+*/
+@import "tailwindcss/utilities";
+@import "./tailwind.utilities.css";
