@@ -51,7 +51,7 @@ This install creates `dist`, `tailwind`, and `src` directories in your project's
 
 1. Create a full Tailwind config file for reference in `tailwind` directory.
 
-        npx tailwind init tailwind.config.reference.js
+        npx tailwind init tailwind.config.reference.js --full
 
 1. Create empty Tailwind custom CSS files in the `tailwind` directory.
 
