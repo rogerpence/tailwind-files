@@ -4,18 +4,77 @@ This repo includes files needed for a scripted Tailwind install on either Window
 
 This install uses PostCSS to install and purge Tailwind.
 
-## Powershell script to install Tailwind on Windows
+## Files in this repository
+
+### Powershell script to install Tailwind on Windows
 
     install-tailwind.ps1
 
-## Bash script to install Tailwind on Ubuntu
+### Bash script to install Tailwind on Ubuntu
 
     install-tailwind.sh
 
-Files for Tailwind install. These files are all referenced in the install scripts.
+Run the scripts from the root of your project.
+
+### Files for Tailwind install.
+
+These files are all referenced in the install scripts.
+
 * `index.html`
 * `postcss.config.js`
 * `tailwind.base.css`
 * `tailwind.components.css`
 * `tailwind.utilities.css`
 * `tailwind.main.css`
+
+
+## Steps to install Tailwind:
+
+This install creates `dist`, `tailwind`, and `src` directories in your project root. You can change those names if necessary.
+
+(`-->` denotes a new line for publication purpose. Remove the `-->` and the newline for copy/paste).
+
+1. Create `package.json` if necessary.
+
+        npm init -y
+
+1. Install NPM packages.
+
+        tailwindcss autoprefixer postcss-cli -->
+        postcss-import cross-env @rogerpence/edit-package-json
+
+1. Make a `tailwind` directory off the root.
+
+1. Create an empty Tailwind config file in `tailwind` directory.
+
+        npx tailwind init
+
+1. Create a full Tailwind config file for reference in `tailwind` directory.
+
+        npx tailwind init tailwind.config.reference.js
+
+1. Create empty Tailwind custom CSS files in `tailwind` directory.
+
+        my.tailwind.utities.css and my.tailwind.components.css
+
+    You'll later add most of your custom CSS and your own Tailwind utilities in these files.
+
+1. Fetch `tailwind.main.css` (from this repository) into the `tailwind` directory.
+
+1. Fetch `postcss.config.js` (from this repository) into the project root.
+
+1. Create a 'src' directory in the project root.
+
+1. Fetch `index.html` (from this repository) into the `src` directory.
+
+1. Add `tailwind:dev` key to `package.json` scripts to compile Tailwind for dev work.
+
+        cross-env NODE_ENV=development postcss ./tailwind/tailwind.main.css -->
+        -o ./dist/css/tailwind.css
+
+1. Compile Tailwind for development:
+
+        npm run tailwind:dev
+
+1. The full `tailwind.css` is created in the `dist` directory.
+
