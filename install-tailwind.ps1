@@ -47,6 +47,5 @@ write-host Launch src/index.html to see Tailwind in action. -foregroundcolor gre
 write-host ------------------------------------------------ -foregroundcolor green
 npx tailwind --version
 
-# Launch
-[system.Diagnostics.Process]::Start("firefox", "$($pwd)\src\index.html") | out-null
-[system.Diagnostics.Process]::Start("chrome", "$($pwd)\src\index.html") | out-null
+# Launch index.html with default browser.
+Start-Process "$($pwd)\src\index.html"
