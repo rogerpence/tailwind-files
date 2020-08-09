@@ -1,12 +1,14 @@
+#!/usr/bin/env bash
 if [ ! -f package.json ]; then
-    npm init -y
+    npm init -y
 fi
 
 npm install --save-dev tailwindcss autoprefixer postcss-cli postcss-import cross-env @rogerpence/edit-package-json
 
 if [ ! -d tailwind ]; then
-    mkdir tailwind
+    mkdir tailwind
 fi
+
 cd tailwind
 npx tailwind init
 npx tailwind init tailwind.config.reference.js
@@ -17,7 +19,7 @@ cd ..
 curl "https://raw.githubusercontent.com/rogerpence/tailwind-files/main/postcss.config.js" --output postcss.config.js
 
 if [ ! -d src ]; then
-    mkdir src
+    mkdir src
 fi
 curl "https://raw.githubusercontent.com/rogerpence/tailwind-files/main/index.html" --output src/index.html
 
@@ -25,5 +27,4 @@ npx editPackageJson -k "tailwind:dev" -v '"cross-env NODE_ENV=development postcs
 
 npm run tailwind:dev
 
-# Change firefox referenc to launch browser on your system.
-/opt/firefox-dev/firefox file:///home/roger/Projects/install-tailwind/test-install/src/index.html
+xdg-open src/index.html
