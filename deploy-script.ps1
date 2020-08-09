@@ -1,0 +1,1 @@
+copy-item install-tailwind.ps1 -destination c:\users\thumb\documents\utilities

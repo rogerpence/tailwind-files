@@ -14,7 +14,7 @@ This install uses PostCSS to install and purge Tailwind.
 
     install-tailwind.sh
 
-Run the scripts from the root of your project.
+Run the scripts from the root of your project. Both scripts install all NPM packages as local packages.
 
 ### Files for Tailwind install.
 
